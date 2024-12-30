@@ -1,4 +1,4 @@
-import { Contract } from "../output/contract/index.cjs";
+import { Contract, ledger } from "../output/contract/index.cjs";
 import {
   emptyZswapLocalState,
   QueryContext,
@@ -18,13 +18,8 @@ const initialContext = {
 
 const initialState = contract.initialState(initialContext);
 
-const encodedStateValue = initialState.currentContractState.data.encode();
-if (
-  encodedStateValue.tag === "array" &&
-  encodedStateValue.content[0].tag === "cell"
-) {
-  console.log(encodedStateValue.content[0].content);
-}
+const initialStateValue = initialState.currentContractState.data;
+console.log("Initial state value:", ledger(initialStateValue).round);
 
 const circuitContext: CircuitContext<unknown> = {
   currentPrivateState: initialState.currentPrivateState,
@@ -36,11 +31,6 @@ const circuitContext: CircuitContext<unknown> = {
   )
 };
 
-const newState = contract.circuits.increment(circuitContext);
-const newEncodedStateValue = newState.context.transactionContext.state.encode();
-if (
-  newEncodedStateValue.tag === "array" &&
-  newEncodedStateValue.content[0].tag === "cell"
-) {
-  console.log(newEncodedStateValue.content[0].content);
-}
+const result = contract.circuits.increment(circuitContext);
+const newStateValue = result.context.transactionContext.state;
+console.log("New state value:", ledger(newStateValue).round);
