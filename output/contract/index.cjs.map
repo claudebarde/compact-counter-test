@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.cjs",
+  "sourceRoot": "../../",
+  "sources": ["counter.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAAA;;;;;;;;MAQA,AAAA,SAEC;;;;;;;;;;;;;;;;;;;;OAAA;;;GAAA;EAVD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAKA;;;;;;;;;;sBAA8B;;;;;;;GAK7B;EAFD,AAAA,aAEC;UADC,GAAK;IAAL;;;;;;;;;;;2EAAA,GAAK;;;;;sBAAA;GACN;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IALD;qCAAA;;;;;;;;;;;;;uDAA8B;KAAA;;;;;;;;;;;;;;"
+}

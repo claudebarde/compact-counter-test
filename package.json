@@ -1,0 +1,24 @@
+{
+  "name": "compact-counter-test",
+  "version": "1.0.0",
+  "description": "An example project of writing tests in JS for Compact contracts",
+  "main": "index.ts",
+  "scripts": {
+    "test": "tsc && node ./dist/index.js",
+    "build": "tsc && node ./dist/index.js"
+  },
+  "keywords": [
+    "Compact",
+    "Midnight",
+    "blockchain"
+  ],
+  "author": "Claude Barde",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@midnight-ntwrk/compact-runtime": "^0.7.0"
+  }
+}
