@@ -11,6 +11,8 @@ import type {
 import { getStateValue } from "./compact";
 
 describe("Counter contract", () => {
+  console.log("\n");
+
   let contract: Contract<unknown, {}>;
   let initialContext: ConstructorContext<unknown>;
 
