@@ -5,6 +5,7 @@ import {
   dummyContractAddress
 } from "@midnight-ntwrk/compact-runtime";
 import type { CircuitContext } from "@midnight-ntwrk/compact-runtime";
+import { getStateValue } from "./compact";
 
 const witness = {};
 const contract = new Contract(witness);
@@ -18,7 +19,7 @@ const initialContext = {
 
 const initialState = contract.initialState(initialContext);
 
-const initialStateValue = initialState.currentContractState.data;
+const initialStateValue = getStateValue(initialState);
 console.log("Initial state value:", ledger(initialStateValue).round);
 
 const circuitContext: CircuitContext<unknown> = {
@@ -32,5 +33,5 @@ const circuitContext: CircuitContext<unknown> = {
 };
 
 const result = contract.circuits.increment(circuitContext);
-const newStateValue = result.context.transactionContext.state;
+const newStateValue = getStateValue(result);
 console.log("New state value:", ledger(newStateValue).round);

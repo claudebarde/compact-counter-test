@@ -4,8 +4,10 @@
   "description": "An example project of writing tests in JS for Compact contracts",
   "main": "index.ts",
   "scripts": {
-    "test": "tsc && node ./dist/index.js",
-    "build": "tsc && node ./dist/index.js"
+    "test": "npm run compile && tsc && jest",
+    "just-test": "jest",
+    "build": "tsc && node ./dist/index.js",
+    "compile": "./compile.sh"
   },
   "keywords": [
     "Compact",
@@ -15,11 +17,18 @@
   "author": "Claude Barde",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^29.7.0",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/assert": "^1.5.11",
+    "assert": "^2.1.0",
+    "babel-jest": "^29.7.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "@midnight-ntwrk/compact-runtime": "^0.7.0",
-    "@midnight-ntwrk/onchain-runtime": "^0.2.2"
+    "@midnight-ntwrk/onchain-runtime": "^0.2.2",
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0"
   }
 }
